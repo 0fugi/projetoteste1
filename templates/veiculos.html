@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>Veículos Disponíveis</h1>
+  <div class="grid">
+    {% for carro in carros %}
+      <div class="card">
+        <img src="{{ url_for('static', filename='images/' + carro.imagem) }}" alt="{{ carro.nome }}">
+        <h2>{{ carro.nome }}</h2>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
+```

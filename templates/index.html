@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>Bem-vindo à GWM Motor Sport</h1>
+  <div class="carousel">
+    {% for carro in carros %}
+      <div class="slide">
+        <img src="{{ url_for('static', filename='images/' + carro.imagem) }}" alt="{{ carro.nome }}">
+        <p>{{ carro.nome }}</p>
+      </div>
+    {% endfor %}
+  </div>
+  <!-- Container do chat -->
+  <div id="chat-container"></div>
+{% endblock %}
